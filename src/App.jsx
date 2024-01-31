@@ -19,7 +19,7 @@ function App() {
 
   const findMeaning = (searchText) => {
     const wordMeaning = dictionaryData.find(
-      (data) => data.word.toLowerCase() == searchText);
+      (data) => data.word.toLowerCase() == searchText.toLowerCase());
 
       if(wordMeaning != undefined){
         setMeaning(wordMeaning.meaning)
@@ -45,7 +45,7 @@ const handleSubmit = () => {
     <div>
       <h1>Dictionary App</h1>
       <input type="text" onChange={handleChange} />
-      <button onClick={handleSubmit}>Search</button>
+      <button type="submit" onClick={handleSubmit}>Search</button>
       <h5>Definition:</h5>
       {meaning != "" ? (
         <p>{meaning}</p>
