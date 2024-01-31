@@ -18,12 +18,17 @@ function App() {
   const [isFound, setIsFound] = useState(false)
 
   const findMeaning = (searchText) => {
-    const wordMeaning = dictionaryData.find(
-      (data) => data.word.toLowerCase() == searchText.toLowerCase());
-
-      if(wordMeaning != undefined){
-        setMeaning(wordMeaning.meaning)
-      }
+    if(searchText == ""){
+      setMeaning("");
+      setIsFound(false)
+    }else{
+      const wordMeaning = dictionaryData.find(
+        (data) => data.word.toLowerCase() == searchText.toLowerCase());
+  
+        if(wordMeaning != undefined){
+          setMeaning(wordMeaning.meaning)
+        }
+    }
   }
 
   const handleChange = (e) => {
