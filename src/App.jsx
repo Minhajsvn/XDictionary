@@ -45,7 +45,7 @@ const handleSubmit = () => {
     <div>
       <h1>Dictionary App</h1>
       <input type="text" onChange={handleChange} />
-      <button type="submit" onClick={handleSubmit}>Search</button>
+      <button onClick={handleSubmit}>Search</button>
       <h5>Definition:</h5>
       {meaning != "" ? (
         <p>{meaning}</p>
